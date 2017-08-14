@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "order",
+  "description": "JSON Order Create",
+  "type" : "object",
+  "properties": {
+    "id": {
+      "not": {}
+    },
+    "href": {
+      "not": {}
+    },
+    "createdOn": {
+      "not": {}
+    },
+    "updatedOn": {
+      "not": {}
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "QUOTE",
+        "APPROVED",
+        "ON_HOLD",
+        "IN_BACKORDER",
+        "IN_PROGRESS",
+        "SHIPPED",
+        "DELIVERED",
+        "CLOSED"
+      ]
+    },
+    "shippingDetails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "not": {}
+          },
+          "href": {
+            "not": {}
+          },
+          "createdOn": {
+            "not": {}
+          },
+          "updatedOn": {
+            "not": {}
+          },
+          "shippedDate": {
+            "type": "object"
+          },
+          "estimatedArrivalDate": {
+            "type": "object"
+          },
+          "trackingID": {
+            "type": "string"
+          },
+          "carrier": {
+            "type": "string"
+          },
+          "itemsInShipment" : {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "not": {}
+                },
+                "href": {
+                  "not": {}
+                },
+                "name": {
+                  "not": {}
+                },
+                "notes": {
+                  "not": {}
+                },
+                "price": {
+                  "not": {}
+                },
+                "quantity": {
+                  "not": {}
+                }
+              }
+            }
+          },
+          "items" : {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "not": {}
+                },
+                "href": {
+                  "not": {}
+                },
+                "name": {
+                  "not": {}
+                },
+                "notes": {
+                  "not": {}
+                },
+                "price": {
+                  "not": {}
+                },
+                "quantity": {
+                  "not": {}
+                }
+              }
+            }
+          },
+          "priceSubTotal": {
+            "type" : "number"
+          },
+          "taxPercent": {
+            "type" : "number"
+          },
+          "totalPrice": {
+            "type" : "number"
+          },
+          "discountPercent": {
+            "type" : "number"
+          },
+          "customer" : {
+            "type" : "object",
+            "properties": {
+              "id": {
+                "not": {}
+              },
+              "href": {
+                "not": {}
+              }
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "", ""
+        ]
+      }
+    }
+  },
+  "required":["", "", "", ""],
+  "additionalProperties": true
+}
+
