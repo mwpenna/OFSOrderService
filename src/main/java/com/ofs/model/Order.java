@@ -1,7 +1,7 @@
-package com.ofs.order.model;
+package com.ofs.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.ofs.order.utils.StringUtils;
+import com.ofs.utils.StringUtils;
 import com.ofs.server.model.OFSEntity;
 import com.ofs.server.utils.Dates;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package com.ofs.order.controller;
+package com.ofs.controller;
 
-import com.ofs.order.model.Order;
-import com.ofs.order.repository.OrderRepository;
+import com.ofs.model.Order;
+import com.ofs.repository.OrderRepository;
 import com.ofs.server.OFSController;
 import com.ofs.server.OFSServerId;
 import com.ofs.server.form.OFSServerForm;

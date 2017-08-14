@@ -1,4 +1,4 @@
-package com.ofs.order.utils;
+package com.ofs.utils;
 
 
 import java.net.URI;

@@ -1,8 +1,7 @@
-package com.ofs.order.repository;
+package com.ofs.repository;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ofs.order.model.Order;
+import com.ofs.model.Order;
 import com.ofs.server.repository.BaseCouchbaseRepository;
 import com.ofs.server.repository.ConnectionManager;
 import com.ofs.server.repository.OFSRepository;

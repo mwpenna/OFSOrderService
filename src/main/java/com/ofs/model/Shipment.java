@@ -1,4 +1,4 @@
-package com.ofs.order.model;
+package com.ofs.model;
 
 import lombok.Data;
 
