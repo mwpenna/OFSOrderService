@@ -82,62 +82,66 @@
                   "not": {}
                 }
               }
-            }
+            },
+            "additionalProperties": false,
+            "required": [
+              "", ""
+            ]
           },
-          "items" : {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "not": {}
-                },
-                "href": {
-                  "not": {}
-                },
-                "name": {
-                  "not": {}
-                },
-                "notes": {
-                  "not": {}
-                },
-                "price": {
-                  "not": {}
-                },
-                "quantity": {
-                  "not": {}
-                }
-              }
-            }
-          },
-          "priceSubTotal": {
-            "type" : "number"
-          },
-          "taxPercent": {
-            "type" : "number"
-          },
-          "totalPrice": {
-            "type" : "number"
-          },
-          "discountPercent": {
-            "type" : "number"
-          },
-          "customer" : {
-            "type" : "object",
-            "properties": {
-              "id": {
-                "not": {}
-              },
-              "href": {
-                "not": {}
-              }
-            }
-          }
-        },
         "additionalProperties": false,
         "required": [
           "", ""
         ]
+      }
+    }
+    },
+    "items" : {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "not": {}
+          },
+           "href": {
+             "not": {}
+           },
+           "name": {
+             "not": {}
+           },
+           "notes": {
+             "not": {}
+           },
+           "price": {
+             "not": {}
+           },
+           "quantity": {
+             "not": {}
+           }
+        }
+      }
+    },
+    "priceSubTotal": {
+      "type" : "number"
+    },
+    "taxPercent": {
+      "type" : "number"
+    },
+    "totalPrice": {
+      "type" : "number"
+    },
+    "discountPercent": {
+      "type" : "number"
+    },
+    "customer" : {
+      "type" : "object",
+      "properties": {
+        "id": {
+          "not": {}
+        },
+        "href": {
+          "not": {}
+        }
       }
     }
   },
