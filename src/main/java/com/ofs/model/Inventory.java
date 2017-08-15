@@ -2,6 +2,7 @@ package com.ofs.model;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.net.URI;
 import java.util.UUID;
 
@@ -11,6 +12,6 @@ public class Inventory{
     private URI href;
     private String name;
     private String notes;
-    private double price;
+    private BigDecimal price;
     private int quantity;
 }
