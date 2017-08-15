@@ -22,13 +22,13 @@ public class Order implements OFSEntity {
     public Order(URI href) {
         this();
         this.href = href;
-        this.createdOn = Dates.now();
+        this.createdOn = this.updatedOn = Dates.now();
         this.id = UUID.fromString(this.getIdFromHref());
         this.status = Status.QUOTE;
     }
 
     public Order(Map map) {
-
+        this.setId(UUID.fromString((String)map.get("id")));
     }
 
     public enum Status {
@@ -54,6 +54,7 @@ public class Order implements OFSEntity {
     private double totalPrice;
     private double discountPercent;
     private Customer customer;
+    private String companyId;
 
     @JsonIgnore
     public String getIdFromHref() {

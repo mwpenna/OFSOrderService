@@ -137,6 +137,9 @@
     "discountPercent": {
       "type" : "number"
     },
+    "customerId" : {
+      "not" : {}
+    },
     "customer" : {
       "type" : "object",
       "properties": {
