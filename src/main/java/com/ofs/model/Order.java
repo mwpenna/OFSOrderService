@@ -46,18 +46,24 @@ public class Order implements OFSEntity {
 
         this.setStatus(Status.valueOf((String) map.get("status")));
 
+
         List<Inventory> itemList = new ArrayList<>();
         for(Object item : (List) map.get("items")) {
             itemList.add(new Inventory((Map) item));
         }
 
-        List<Shipment> shipmentList = new ArrayList<>();
-        for(Object shipment: (List) map.get("shippingDetails")) {
-            shipmentList.add(new Shipment((Map) shipment));
+
+        if(map.containsKey("shippingDetails")) {
+            List<Shipment> shipmentList = new ArrayList<>();
+
+            for(Object shipment: (List) map.get("shippingDetails")) {
+                shipmentList.add(new Shipment((Map) shipment));
+            }
+
+            this.setShippingDetails(shipmentList);
         }
 
         this.setItems(itemList);
-        this.setShippingDetails(shipmentList);
         this.setCustomer(new Customer((Map) map.get("customer")));
     }
 
