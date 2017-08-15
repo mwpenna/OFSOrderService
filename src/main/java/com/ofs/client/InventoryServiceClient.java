@@ -21,7 +21,7 @@ public class InventoryServiceClient extends BaseRestClient<Inventory> {
     public Optional<Inventory> getInventoryById(String id) {
         Subject subject = SecurityContext.getSubject();
         URI requestUri = URI.create(inventoryServiceBaseURL + "/inventory/id/" + id);
-        HttpHeaders headers = this.getHeaders(subject.getToken());
+        HttpHeaders headers = this.getHeaders("Bearer " + subject.getToken());
         RequestEntity request = new RequestEntity(headers, HttpMethod.GET, requestUri);
         return Optional.of(this.sendRequest(request, Inventory.class));
     }

@@ -24,8 +24,8 @@ public class UserServiceClient extends BaseRestClient<User> {
 
     public Optional<User> getUserById(String id) {
         Subject subject = SecurityContext.getSubject();
-        URI requestUri = URI.create(userServiceBaseURL + "/user/id/" + id);
-        HttpHeaders headers = this.getHeaders(subject.getToken());
+        URI requestUri = URI.create(userServiceBaseURL + "/users/id/" + id);
+        HttpHeaders headers = this.getHeaders("Bearer " + subject.getToken());
         RequestEntity request = new RequestEntity(headers, HttpMethod.GET, requestUri);
         return Optional.of(this.sendRequest(request, User.class));
     }

@@ -20,7 +20,7 @@ public abstract class BaseRestClient<T> extends RestService{
             ResponseEntity e = this.exchange(request, clazz);
             return (T)e.getBody();
         } catch (Exception ex) {
-            log.error("Exception occurred when getting user: {}", ex);
+            log.error("Request {} resulted in exception: ", request.getUrl(), ex);
             throw ex;
         }
     }
