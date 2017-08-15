@@ -13,7 +13,7 @@ import java.util.Objects;
 
 @Slf4j
 @Component
-@OFSRepository("order")
+@OFSRepository("orders")
 public class OrderRepository extends BaseCouchbaseRepository<Order> {
 
     @Autowired
@@ -23,7 +23,7 @@ public class OrderRepository extends BaseCouchbaseRepository<Order> {
         Objects.requireNonNull(order);
 
         log.info("Attempting to add order with id: {}", order.getId());
-        add(order.getId().toString(), connectionManager.getBucket("order"), order);
+        add(order.getId().toString(), connectionManager.getBucket("orders"), order);
         log.info("Order with id: {} has been added", order.getId());
     }
 }

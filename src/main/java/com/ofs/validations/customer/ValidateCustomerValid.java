@@ -29,7 +29,7 @@ public class ValidateCustomerValid implements OrderCreateValidation {
 
             Subject subject = SecurityContext.getSubject();
             if(user.getCompany()!= null) {
-                if(user.getCompany().getId().toString() != StringUtils.getIdFromURI(subject.getCompanyHref())) {
+                if(!user.getCompany().getId().toString().equals(StringUtils.getIdFromURI(subject.getCompanyHref()))) {
                     errors.rejectValue("order.customer.company.id", "User does not exists for company.");
                 }
             }
