@@ -8,6 +8,7 @@ import lombok.Data;
 
 import java.net.URI;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -29,6 +30,28 @@ public class Order implements OFSEntity {
 
     public Order(Map map) {
         this.setId(UUID.fromString((String)map.get("id")));
+        this.setCompanyId((String) map.get("companyId"));
+        this.setDiscountPercent((Double) map.get("discountPercent"));
+        this.setTotalPrice((Double) map.get("totalPrice"));
+        this.setPriceSubTotal((Double) map.get("priceSubTotal"));
+        this.setTaxPercent((Double) map.get("taxPercent"));
+        this.setHref(URI.create((String) map.get("href")));
+
+        String createdOn = (String) map.get("createdOn");
+        this.setCreatedOn(createdOn != null ? ZonedDateTime.parse(createdOn) : null);
+
+        String updatedOn = (String) map.get("updatedOn");
+        this.setUpdatedOn(updatedOn != null ? ZonedDateTime.parse(updatedOn) : null);
+
+        this.setStatus(Status.valueOf((String) map.get("status")));
+
+        List<Inventory> itemList = new ArrayList<>();
+        for(Object item : (List) map.get("items")) {
+            itemList.add(new Inventory((Map) item));
+        }
+
+        this.setItems(itemList);
+        this.setCustomer(new Customer((Map) map.get("customer")));
     }
 
     public enum Status {
