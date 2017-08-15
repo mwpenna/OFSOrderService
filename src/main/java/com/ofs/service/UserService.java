@@ -13,7 +13,7 @@ public class UserService {
     @Autowired
     private UserServiceClient userServiceClient;
 
-    public Optional<User> getUserById(String id, String token) {
-        return userServiceClient.getUserById(id, token);
+    public Optional<User> getUserById(String id) {
+        return userServiceClient.getUserById(id);
     }
 }

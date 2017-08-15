@@ -2,6 +2,8 @@ package com.ofs.client;
 
 import com.ofs.model.userservice.User;
 import com.ofs.server.rest.RestService;
+import com.ofs.server.security.SecurityContext;
+import com.ofs.server.security.Subject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -20,9 +22,10 @@ public class UserServiceClient extends RestService {
     @Value("${userServiceBaseURL}")
     private String userServiceBaseURL;
 
-    public Optional<User> getUserById(String id, String token) {
+    public Optional<User> getUserById(String id) {
+        Subject subject = SecurityContext.getSubject();
         URI requestUri = URI.create(userServiceBaseURL + "/user/id/" + id);
-        HttpHeaders headers = this.getHeaders(token);
+        HttpHeaders headers = this.getHeaders(subject.getToken());
         RequestEntity request = new RequestEntity(headers, HttpMethod.GET, requestUri);
         return Optional.of(this.sendRequest(request));
     }
