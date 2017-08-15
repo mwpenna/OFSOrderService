@@ -1,6 +1,7 @@
 package com.ofs.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ofs.utils.StringUtils;
 import com.ofs.server.model.OFSEntity;
 import com.ofs.server.utils.Dates;
@@ -50,7 +51,13 @@ public class Order implements OFSEntity {
             itemList.add(new Inventory((Map) item));
         }
 
+        List<Shipment> shipmentList = new ArrayList<>();
+        for(Object shipment: (List) map.get("shippingDetails")) {
+            shipmentList.add(new Shipment((Map) shipment));
+        }
+
         this.setItems(itemList);
+        this.setShippingDetails(shipmentList);
         this.setCustomer(new Customer((Map) map.get("customer")));
     }
 
