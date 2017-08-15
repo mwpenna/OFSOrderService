@@ -101,7 +101,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "object"
+            "type": "string"
           },
           "href": {
             "not": {}
@@ -113,7 +113,7 @@
             "type": "string"
           },
           "price": {
-            "type": "number"
+            "type": "string"
           },
           "quantity": {
             "type": "integer"
@@ -141,7 +141,7 @@
       "type" : "object",
       "properties": {
         "id": {
-          "type": "object"
+          "type": "string"
         },
         "href": {
           "not": {}
