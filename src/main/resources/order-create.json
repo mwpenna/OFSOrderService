@@ -64,7 +64,7 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "not": {}
+                  "type": "object"
                 },
                 "href": {
                   "not": {}
@@ -73,27 +73,27 @@
                   "not": {}
                 },
                 "notes": {
-                  "not": {}
+                  "type": "string"
                 },
                 "price": {
-                  "not": {}
+                  "type": "number"
                 },
                 "quantity": {
-                  "not": {}
+                  "type": "integer"
                 }
               }
             },
             "additionalProperties": false,
             "required": [
-              "", ""
+              "id", "quantity"
             ]
-          },
-        "additionalProperties": false,
-        "required": [
-          "", ""
-        ]
-      }
-    }
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "itemsInShipment", "carrier", "trackingID"
+      ]
     },
     "items" : {
       "type": "array",
@@ -101,34 +101,38 @@
         "type": "object",
         "properties": {
           "id": {
+            "type": "object"
+          },
+          "href": {
             "not": {}
           },
-           "href": {
-             "not": {}
-           },
-           "name": {
-             "not": {}
-           },
-           "notes": {
-             "not": {}
-           },
-           "price": {
-             "not": {}
-           },
-           "quantity": {
-             "not": {}
-           }
+          "name": {
+            "not": {}
+          },
+          "notes": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "integer"
+          }
         }
-      }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id", "quantity"
+      ]
     },
     "priceSubTotal": {
-      "type" : "number"
+      "not" : {}
     },
     "taxPercent": {
       "type" : "number"
     },
     "totalPrice": {
-      "type" : "number"
+      "not" : {}
     },
     "discountPercent": {
       "type" : "number"
@@ -137,7 +141,7 @@
       "type" : "object",
       "properties": {
         "id": {
-          "not": {}
+          "type": "object"
         },
         "href": {
           "not": {}
@@ -145,7 +149,7 @@
       }
     }
   },
-  "required":["", "", "", ""],
+  "required":["items", "customer", "taxPercent"],
   "additionalProperties": true
 }
 
