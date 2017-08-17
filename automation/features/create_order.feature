@@ -23,7 +23,7 @@ Feature: Order is created when order endpoint is called
     Given A WAREHOUSE user exists with inventory items
     When A request to create an order is received
     Then the response should have a status of 400
-\
+
   Scenario: A request to create an order is received by a CUSTOMER
     Given A CUSTOMER user exists with inventory items
     When A request to create an order is received
